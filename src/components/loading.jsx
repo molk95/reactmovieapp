@@ -6,7 +6,7 @@ export default class Loading extends Component {
     return (
       (
         <div className="example">
-          <Spin size="large" />
+          <Spin tip="Loading..." size="large" />
         </div>
       )
     );

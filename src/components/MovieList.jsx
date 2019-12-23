@@ -1,13 +1,13 @@
 import React from "react";
 import MovieCard from "./MovieCard";
 import AddMovie from "./AddMovie";
-import Loading from "./loading"
+
 
 
 export default class MovieList extends React.Component {
   state = {
     visible: false,
-    loading: true
+   
   };
 
   addOne = event => {
@@ -20,16 +20,10 @@ export default class MovieList extends React.Component {
       visible: false
     });
   };
-componentDidMount (){
-  setTimeout(()=> this.setState({
-    loading:false
-  }),2000)
-}
+
   
   render() {
     return (
-      <div>
-         {this.state.loading ? <Loading/> :
      
         <div 
         className="movie-list" >
@@ -110,7 +104,7 @@ componentDidMount (){
             </div>
           </div>
         </div>
-        </div>}
+        
         </div>
     );
   }

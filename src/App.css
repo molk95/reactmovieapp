@@ -201,6 +201,8 @@ flex-flow: column nowrap;}
 }
 .example {
   text-align: center;
+  display: flex;
+  justify-content: center;
   border-radius: 4px;
   margin-bottom: 20px;
   padding: 30px 50px;

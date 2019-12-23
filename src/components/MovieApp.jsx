@@ -2,6 +2,7 @@ import React, { Component, Suspense  } from "react";
 import MovieList from "./MovieList";
 import SearchMovie from "./SearchMovie";
 import RatingFilter from "./RatingFilter";
+import Loading from "./loading"
 
 const movies = [
   {
@@ -75,19 +76,25 @@ export default class MovieContainer extends React.Component {
       ]
     });
   };
-  searchMovie = event => {
+  searchMovie = event => { 
     this.setState({
       searchText: event.target.value
-    });
-  };
-  rater = clicked => {
+  })}
+  rater = clicked => { 
     this.setState({
-      stars: clicked
+      stars: clicked 
     });
   };
+  componentDidMount (){
+    setTimeout(()=> this.setState({
+      loading:false
+    }),2000)
+  }
   
   render() {
     return (
+      <div>
+         {this.state.loading ? <Loading/> :
       <div className="movie-app">
         <div className="movie-app-header">
           <SearchMovie search={this.searchMovie} />
@@ -109,6 +116,7 @@ export default class MovieContainer extends React.Component {
             rating={this.state.rating}
           />
         </main>
+        </div>}
       </div>
     );
   }
