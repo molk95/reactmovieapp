@@ -1,0 +1,12 @@
+.search-bar {
+    display:flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin:0;
+    background-color: rgba(236, 236, 236, 0.9);
+    width: 100%;
+    padding: 20px 80px;
+}
+
+
