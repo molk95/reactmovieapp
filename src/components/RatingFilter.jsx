@@ -1,20 +1,31 @@
-import React from 'react'
-
+import React from "react";
+// const loading = true;
+// const componentDidMount = () => {
+//   setTimeout((loading: false), 2000);
+// };
 const RatingFilter = ({ rate, starClicked }) => {
-    return (
-        <div className="rating-filter">
-        <div > <span className="new-rating-filter"> <span className="rating-filter-text">Minimum rating</span> </span>
-        
-            {Array.from({ length: 5 }, (star, i) => (
-                <span  onClick={() => { starClicked(i + 1) }}>
-                    {i < rate ? "★" : "☆"}
-                </span> 
-                
-            ))} 
-            
+  return (
+    <div>
+      <div className="rating-filter">
+        <div>
+          {" "}
+          <span className="new-rating-filter">
+            {" "}
+            <span className="rating-filter-text">Minimum rating</span>{" "}
+          </span>
+          {Array.from({ length: 5 }, (star, i) => (
+            <span
+              onClick={() => {
+                starClicked(i + 1);
+              }}
+            >
+              {i < rate ? "★" : "☆"}
+            </span>
+          ))}
         </div>
-        </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default RatingFilter;
@@ -37,4 +48,3 @@ export default RatingFilter;
 // }
 
 // export default Rating
-

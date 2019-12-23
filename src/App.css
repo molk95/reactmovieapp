@@ -199,3 +199,10 @@ flex-flow: column nowrap;}
   align-items: center;
   justify-content: center;
 }
+.example {
+  text-align: center;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  padding: 30px 50px;
+  margin: 20px 0;
+}

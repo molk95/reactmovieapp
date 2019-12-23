@@ -1,10 +1,13 @@
 import React from "react";
 import MovieCard from "./MovieCard";
 import AddMovie from "./AddMovie";
+import Loading from "./loading"
+
 
 export default class MovieList extends React.Component {
   state = {
-    visible: false
+    visible: false,
+    loading: true
   };
 
   addOne = event => {
@@ -17,11 +20,21 @@ export default class MovieList extends React.Component {
       visible: false
     });
   };
-
+componentDidMount (){
+  setTimeout(()=> this.setState({
+    loading:false
+  }),2000)
+}
+  
   render() {
     return (
-      
-        <div className="movie-list" >
+      <div>
+         {this.state.loading ? <Loading/> :
+     
+        <div 
+        className="movie-list" >
+          
+         
           {this.props.list.map(el => (
             <MovieCard movie={el} />
           ))}
@@ -87,7 +100,7 @@ export default class MovieList extends React.Component {
                   type="button"
                   onClick={() => {
                     if (this.props.rating.match(/[0-5]/g)) {
-                      this.props.new();
+                  
                       this.close();
                     } else return alert("Please enter a valid rating");
                   }}
@@ -97,6 +110,7 @@ export default class MovieList extends React.Component {
             </div>
           </div>
         </div>
+        </div>}
         </div>
     );
   }

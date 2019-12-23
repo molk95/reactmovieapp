@@ -1,7 +1,8 @@
-import React, { Component } from "react";
+import React, { Component, Suspense  } from "react";
 import MovieList from "./MovieList";
 import SearchMovie from "./SearchMovie";
 import RatingFilter from "./RatingFilter";
+
 const movies = [
   {
     id: "yourname",
@@ -52,7 +53,8 @@ export default class MovieContainer extends React.Component {
     date: "",
     rating: "",
     searchText: "",
-    stars: 0
+    stars: 0,
+    loading: true
   };
 
   changeInput = event => {
@@ -83,6 +85,7 @@ export default class MovieContainer extends React.Component {
       stars: clicked
     });
   };
+  
   render() {
     return (
       <div className="movie-app">
